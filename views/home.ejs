@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="\css\style.css">
+    <link rel="shortcut icon" href="\images\favicon.png" type="image/x-icon"/>
+    <title>Todo-App</title>
+</head>
+<body class="flex-col align-items-center">
+    <h2 id="todo-app-title" class ="">TODO-APP</h2>
+
+    <!-- section to display selected todo  -->
+    <div id="display-selected-todo" class="flex-col justify-content-center align-items-center"></div>
+
+
+        <!-- create todo form  -->
+        <form action="/create-todo" method = "POST" id="create-todo-form" class="flex-col justify-content-center align-items-center">
+            <!-- todo description input -->
+                <div class="input-description flex-col">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" class="border-style-none" placeholder="Task to do!">
+                </div>
+                <!-- todo category input  -->
+                <div class="input-category flex-col">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="border-style-none">
+                        <option value="none">Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Games">Games</option>
+                        <option value="Music">Music</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <!-- due date input  -->
+                <div class="input-due-date flex-col">
+                    <label for="due_date">Due-Date</label>
+                    <input type="date" id="due_date" name="due_date" class="border-style-none">
+                </div>
+                <!-- add todo button  -->
+                <div class="" id="submit-button">
+                    <!-- <i class="fas fa-plus"></i> -->
+                    <input type="submit" value="ADD TODO" >
+                </div>
+                <!-- close form button  -->
+                <i  id="close-form" class="fas fa-times"></i>
+            
+
+        </form>
+   
+    <div id="add-todo-button" class="round-image">
+<img src="\images\addButton.png" alt="Add">
+    </div>
+<!-- <button id="add-todo-button"> <img src="\images\addButton.jpg" alt=""></button> -->
+  <!-- display todo section  -->
+    <div id="display-todo">
+        <ul class="flex-col">
+           <%for(let i of todo_list){%>
+
+        <li class="flex-row todo" onclick="displaySelectedTodo(this)">
+                
+                    <!-- display descripition of ith todo  -->
+                    <div class="description">
+                        <%= i.description %>
+                    </div>
+                    <!-- due date of ith todo  -->
+                    <div class=" due-date flex-col">
+                         <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <%=i.due_date.getDate() %>
+                            /
+                            <%=i.due_date.getMonth() +1%>
+                            /
+                            <%=i.due_date.getFullYear()%>
+                        </div>
+                    </div>
+                    <!-- display category of ith todo  -->
+                    <div class="category">
+                        <%= i.category %>
+                    </div>
+                    <!-- delete todo button  -->
+                    <div class=" delete-todo">
+                        <a href="/delete-todo/?id=<%=i._id%>">
+                            <i class = "fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                  
+     
+                </li>
+
+            <%}%>
+        </ul>
+
+        
+    </div>
+    
+    
+
+    <script type="text/javascript" src="/js/script.js"></script>
+    
+</body>
+</html>
