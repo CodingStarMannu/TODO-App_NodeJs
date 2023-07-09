@@ -1,0 +1,173 @@
+/* body  */
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/* todo-app-title  */
+#todo-app-title{
+    background-color: #a3d455;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: #fff;
+    border-radius: 7px;
+}
+/* display-selected-todo  */
+#display-selected-todo{
+    width: 100%;
+    height: 10rem;
+    background-color: #EFEEEE;
+    text-align: center;
+    font-size: 1.3rem;
+}
+/* create-todo-form  */
+#create-todo-form{
+    height: 20rem;
+    width: 70%;
+    color: #fff;
+    background-color: #a3d455;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+#close-form{
+    position: absolute;
+    left: 90%;
+    top: 5%;
+}
+
+.input-description input,.input-category select,.input-due-date input{
+    background-color: inherit;
+    border: none;
+    height: 2rem;
+    margin: auto;
+}
+#create-todo-form>div:not(:nth-child(4)){
+    padding: 1rem;
+    border-bottom: 0.02rem solid #000;
+    width: 50%;
+}
+#submit-button{
+    padding: 0.5rem;
+    margin-top: 1rem;
+    box-shadow: 0.3rem 0.3rem 1rem #000;
+    background-color: #EF637D;
+}
+#submit-button input{
+    background-color: inherit;
+    border: none;
+    color: #fff;
+}
+/* add-todo-button  */
+#add-todo-button img{
+    width: 100%;
+    height: 100%;
+}
+#add-todo-button{
+    width: 4rem;
+    height: 4rem;
+    margin-top: -1rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem #6aba1e;
+}
+.round-image {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .round-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+/* display-todo section  */
+#display-todo{
+    width: 80%;
+    margin-top: 3rem;
+}
+#display-todo ul,.todo{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+#display-todo ul li{
+    list-style: none;
+    align-items: baseline;
+}
+.todo{
+    background-color: #EEEEEE;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+   
+}
+.todo .description{
+    width:40%;
+    background-color: #C4C4C4;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 0.3rem 0.6rem 0.3rem 0.3rem;
+}
+.todo .due-date{
+    width: 35%;
+}
+.todo .due-date i{
+    padding-bottom: 0.4rem;
+}
+
+.todo .category{
+    width: 20%;
+}
+.todo .delete-todo a{
+    color: #000;
+}
+
+/* utility classes */
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-items-center{
+    align-items: center;
+}
+
+/* mobile first approach  */
+@media only screen and (min-width: 992px){
+    /* todo-app-title  */
+    #todo-app-title{
+        margin-top: 2rem;
+        width: 65%;
+    }
+    /* display-selected-todo  */
+    #display-selected-todo{
+        width: 65%;
+        font-size: 1.7 rem;
+    }
+    /* create-todo-form  */
+    #create-todo-form{
+        width: 30%;
+    }
+    /* display-todo section  */
+    #display-todo{
+        width: 65%;
+    }
+    .todo .due-date{
+        flex-direction: row;
+        align-items: baseline;
+    }
+    .todo .due-date i{
+        padding-right: 0.6rem;
+    }
+}
